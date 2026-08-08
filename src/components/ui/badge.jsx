@@ -1,1 +1,0 @@
-const classes = `flex items-center justify-center rounded-full bg-primary text-white shadow-sm p-2 ${variant}`;
