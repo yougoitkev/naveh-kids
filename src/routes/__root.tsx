@@ -119,8 +119,34 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <CartProvider>
+        <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
+          <div className="container-page flex h-16 items-center justify-between">
+            <Link to="/" className="font-display text-lg tracking-tight">
+              NAVEH<span className="text-accent"> Kids</span>
+            </Link>
+            <nav className="flex items-center gap-6 text-sm">
+              <Link to="/shop" className="link-underline">
+                Shop
+              </Link>
+              <Link to="/about" className="link-underline">
+                Our story
+              </Link>
+            </nav>
+          </div>
+        </header>
+        <main>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <footer className="mt-20 border-t border-border py-10">
+          <div className="container-page flex flex-wrap items-center justify-between gap-4 text-sm text-muted-foreground">
+            <p>NAVEH Kids — crafted for every little blessing.</p>
+            <p>hello@navehkids.com</p>
+          </div>
+        </footer>
+        <Toaster position="bottom-right" />
+      </CartProvider>
     </QueryClientProvider>
   );
 }
