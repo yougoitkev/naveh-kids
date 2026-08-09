@@ -36,7 +36,7 @@ export const Route = createFileRoute("/product/$slug")({
 });
 
 function ProductDetail() {
-  const { product } = Route.useLoaderData();
+  const { product } = Route.useLoaderData() as { product: Product };
   const { addItem } = useCart();
 
   const specs: Array<[string, string]> = [
