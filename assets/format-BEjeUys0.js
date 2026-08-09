@@ -1,1 +1,0 @@
-function e(e){return new Intl.NumberFormat(`en-IN`,{style:`currency`,currency:`INR`,maximumFractionDigits:0}).format(e)}var t={in_stock:`In stock — ships in 3–5 days`,made_to_order:`Made to order — ships in 2–3 weeks`,sold_out:`Sold out — join the waitlist`};export{e as n,t};
