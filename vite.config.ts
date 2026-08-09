@@ -6,5 +6,5 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  base: '/naveh-kids/',
+  base: process.env.VITE_BASE_URL || "/",
 });

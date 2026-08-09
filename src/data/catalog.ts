@@ -5,19 +5,19 @@ import storyWorkshop from "@/assets/story-workshop.jpg";
 import assemblyKit from "@/assets/assembly-kit.jpg";
 import productKitchenTower from "@/assets/product-kitchen-tower.jpg";
 
-import logoAsset from "@/assets/logo.jpg.asset.json";
-import scooterBlue from "@/assets/scooter-blue.jpg.asset.json";
-import scooterSide from "@/assets/scooter-side.jpg.asset.json";
-import scooterWheel from "@/assets/scooter-wheel.jpg.asset.json";
-import rockingDino from "@/assets/rocking-dino.jpg.asset.json";
-import climbingArch from "@/assets/climbing-arch.jpg.asset.json";
-import archChair from "@/assets/arch-chair.jpg.asset.json";
+import logo from "@/assets/logo.jpg";
+import scooterBlue from "@/assets/scooter-blue.jpg";
+import scooterSide from "@/assets/scooter-side.jpg";
+import scooterWheel from "@/assets/scooter-wheel.jpg";
+import rockingDino from "@/assets/rocking-dino.jpg";
+import climbingArch from "@/assets/climbing-arch.jpg";
+import archChair from "@/assets/arch-chair.jpg";
 
-export const logo = logoAsset.url;
+export { logo };
 
 export const images = {
-  hero: scooterSide.url,
-  heroAlt: scooterBlue.url,
+  hero: scooterSide,
+  heroAlt: scooterBlue,
   craft: craftSanding,
   workshop: storyWorkshop,
   assembly: assemblyKit,
@@ -42,7 +42,7 @@ export const categories: Category[] = [
     tagline: "First journeys",
     description:
       "Sturdy wooden ride-ons built for toddlers finding their balance — low decks, silent wheels and soft, splinter-free edges.",
-    image: scooterSide.url,
+    image: scooterSide,
   },
   {
     slug: "rocking-toys",
@@ -50,7 +50,7 @@ export const categories: Category[] = [
     tagline: "Gentle motion",
     description:
       "Rockers with wide, tip-resistant runners and a long, calming arc — made for safe indoor play and big imaginations.",
-    image: rockingDino.url,
+    image: rockingDino,
   },
   {
     slug: "montessori-play",
@@ -58,7 +58,7 @@ export const categories: Category[] = [
     tagline: "Climb, balance, imagine",
     description:
       "Climbing arches and open-ended play pieces that build motor skills and confidence, one rung at a time.",
-    image: climbingArch.url,
+    image: climbingArch,
   },
   {
     slug: "learning-towers",
@@ -74,7 +74,7 @@ export const categories: Category[] = [
     tagline: "Child-scale living",
     description:
       "Seating and play furniture built at a child's proportions, finished well enough for a grown-up room.",
-    image: archChair.url,
+    image: archChair,
   },
 ];
 
@@ -89,7 +89,7 @@ export const products: Product[] = [
       "A sturdy wooden ride-on scooter designed for toddlers and young children.",
     description:
       "Our signature ride-on. Shaped from birch plywood with a broad, low deck and four smooth-rolling castors, the scooter keeps a toddler steady while they learn to push, steer and stop. Every edge is sanded soft, and the finish is toy-safe, so it is as happy in a living room as it is in a playroom.",
-    images: [scooterBlue.url, scooterSide.url, scooterWheel.url],
+    images: [scooterBlue, scooterSide, scooterWheel],
     colours: ["Pink", "Blue", "Yellow"],
     specs: {
       dimensions: "Height 75 cm · Length 72 cm · Width 32 cm",
@@ -123,7 +123,7 @@ export const products: Product[] = [
       "A dinosaur-shaped wooden rocker designed for safe indoor play and imaginative fun.",
     description:
       "Half rocker, half best friend. The dinosaur silhouette is cut from birch plywood and finished by hand, with a supportive seat, backrest and beech grab dowel. Wide laminated runners give a long, slow rocking arc that soothes rather than jolts.",
-    images: [rockingDino.url, climbingArch.url, storyWorkshop],
+    images: [rockingDino, storyWorkshop],
     colours: ["Natural wood finish"],
     specs: {
       dimensions: "To be finalised",
@@ -153,7 +153,7 @@ export const products: Product[] = [
       "A wooden climbing arch that encourages active play and motor skill development.",
     description:
       "The most-used piece in a Montessori playroom. Climb it one way, flip it over to rock, or throw a blanket across for a cave. Rungs are spaced to a toddler's grip and the laminated side panels are strong without being heavy.",
-    images: [climbingArch.url, craftSanding, assemblyKit],
+    images: [climbingArch, craftSanding, assemblyKit],
     colours: ["Natural wood finish"],
     specs: {
       dimensions: "Height 53 cm · Length 100 cm · Width 50 cm",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     shortDescription: "A wooden arch chair designed for children's seating and play.",
     description:
       "A round, child-scale stool-chair in birch plywood with turned dowel legs. Light enough for a three-year-old to carry to the play table, sturdy enough to be climbed on sideways. Pairs with our arch play table.",
-    images: [archChair.url, storyWorkshop, craftSanding],
+    images: [archChair, storyWorkshop],
     colours: ["Natural wood finish"],
     specs: {
       dimensions: "Height 26 cm · Diameter 26 cm",
