@@ -17,7 +17,10 @@ export interface Product {
   name: string;
   categorySlug: string;
   price: number;
+  priceOnRequest?: boolean;
+  colours?: string[];
   compareAtPrice?: number;
+
   shortDescription: string;
   description: string;
   images: string[];

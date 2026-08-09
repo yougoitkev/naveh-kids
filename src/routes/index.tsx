@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { categories, craftSteps, images, products, testimonials } from "@/data/catalog";
-import { formatINR } from "@/lib/format";
+import { brand, categories, craftSteps, images, products, testimonials, whyNaveh } from "@/data/catalog";
+import { priceLabel } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Crafted for every little blessing. Handmade wooden scooters, rockers, Montessori climbing arches, kitchen towers and child-scale furniture, made in India.",
+          "Crafted for every little blessing. Wooden scooters, rocking dinosaurs, Montessori climbing arches and convertible kitchen towers, handmade in Bengaluru and delivered across India.",
       },
       { property: "og:title", content: "NAVEH Kids — Crafted for every little blessing" },
       {
@@ -29,30 +29,32 @@ function Home() {
 
   return (
     <div>
-      <section className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <p className="eyebrow">NAVEH Kids</p>
-          <h1 className="display-xl mt-5">Crafted for every little blessing.</h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Wooden scooters, rockers and Montessori pieces shaped by hand in our workshop — soft
-            edges, toy-safe finishes and the kind of quality that gets handed down.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild size="lg">
-              <Link to="/shop">Shop the collection</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/about">Our story</Link>
-            </Button>
+      <section className="bg-secondary/60">
+        <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="eyebrow">{brand.name}</p>
+            <h1 className="display-xl mt-5">Crafted for every little blessing.</h1>
+            <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
+              Wooden scooters, rockers and Montessori pieces shaped by hand in our family workshop —
+              soft edges, toy-safe finishes and the kind of quality that gets handed down.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild size="lg">
+                <Link to="/shop">Shop the collection</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/about">Our story</Link>
+              </Button>
+            </div>
           </div>
+          <img
+            src={images.hero}
+            alt="Handcrafted NAVEH Kids wooden scooter in a sunlit playroom"
+            width={1600}
+            height={1200}
+            className="w-full rounded-[2rem] object-cover shadow-lift"
+          />
         </div>
-        <img
-          src={images.hero}
-          alt="Handcrafted NAVEH Kids wooden scooter in a sunlit playroom"
-          width={1600}
-          height={1200}
-          className="w-full rounded-[2rem] object-cover shadow-lift"
-        />
       </section>
 
       <section className="container-page py-16">
@@ -104,9 +106,24 @@ function Home() {
                 />
               </div>
               <h3 className="mt-4 text-base">{product.name}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{formatINR(product.price)}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{priceLabel(product)}</p>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="container-page py-16">
+        <div className="rounded-[2rem] bg-blush/40 p-8 md:p-14">
+          <p className="eyebrow">Why NAVEH?</p>
+          <h2 className="display-lg mt-3">Four reasons families choose us.</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {whyNaveh.map((item) => (
+              <div key={item.title}>
+                <h3 className="text-lg">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

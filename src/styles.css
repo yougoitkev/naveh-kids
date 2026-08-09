@@ -50,22 +50,27 @@
   --color-sage-deep: var(--sage-deep);
   --color-dusty: var(--dusty);
   --color-blush: var(--blush);
+  --color-terracotta: var(--terracotta);
   --color-ink: var(--ink);
+
 }
 
 :root {
   --radius: 1rem;
 
-  --cream: oklch(0.975 0.014 88);
-  --beige: oklch(0.935 0.022 82);
-  --wood: oklch(0.755 0.072 68);
-  --wood-light: oklch(0.875 0.04 80);
-  --wood-deep: oklch(0.47 0.068 55);
-  --sage: oklch(0.845 0.038 152);
-  --sage-deep: oklch(0.53 0.048 152);
+  /* Palette sampled from the NAVEH Kids logo */
+  --cream: oklch(0.972 0.016 79);
+  --beige: oklch(0.932 0.026 76);
+  --wood: oklch(0.79 0.062 71);
+  --wood-light: oklch(0.885 0.042 78);
+  --wood-deep: oklch(0.44 0.062 55);
+  --sage: oklch(0.83 0.036 138);
+  --sage-deep: oklch(0.545 0.048 138);
+  --terracotta: oklch(0.615 0.113 39);
   --dusty: oklch(0.79 0.048 240);
   --blush: oklch(0.878 0.045 20);
-  --ink: oklch(0.28 0.014 60);
+  --ink: oklch(0.3 0.02 55);
+
 
   --background: var(--cream);
   --foreground: var(--ink);
