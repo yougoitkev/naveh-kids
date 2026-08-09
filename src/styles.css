@@ -50,7 +50,9 @@
   --color-sage-deep: var(--sage-deep);
   --color-dusty: var(--dusty);
   --color-blush: var(--blush);
+  --color-terracotta: var(--terracotta);
   --color-ink: var(--ink);
+
 }
 
 :root {
