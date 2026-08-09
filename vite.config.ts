@@ -5,4 +5,6 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({});
+export default defineConfig({
+  base: '/naveh-kids/',
+});
