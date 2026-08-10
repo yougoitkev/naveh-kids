@@ -4,7 +4,10 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "dev": "vite dev --port 8080",
     "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "start": "node .output/server/index.mjs",
     "deploy": "gh-pages -d .output/public"
   },
   "dependencies": {
