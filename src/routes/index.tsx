@@ -26,14 +26,18 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   const featured = products.filter((product) => product.featured).slice(0, 4);
+  const tints = ["bg-sage/45", "bg-mauve-light/45", "bg-wood-light/50", "bg-blush/60", "bg-dusty/40", "bg-beige"];
 
   return (
     <div>
-      <section className="bg-secondary/60">
+      <section className="bg-secondary">
         <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow">{brand.name}</p>
-            <h1 className="display-xl mt-5">Crafted for every little blessing.</h1>
+            <h1 className="display-xl mt-5">
+              Crafted for every <span className="text-accent">little</span>{" "}
+              <span className="text-terracotta">blessing.</span>
+            </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
               Wooden scooters, rockers and Montessori pieces shaped by hand in our family workshop —
               soft edges, toy-safe finishes and the kind of quality that gets handed down.
@@ -45,6 +49,16 @@ function Home() {
               <Button asChild size="lg" variant="outline">
                 <Link to="/about">Our story</Link>
               </Button>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2 text-xs">
+              {["Toy-safe finishes", "Handmade in Bengaluru", "Birch plywood"].map((tag, i) => (
+                <span
+                  key={tag}
+                  className={`rounded-full px-3 py-1.5 ${["bg-sage/60", "bg-blush", "bg-wood-light/70"][i]}`}
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
           <img
@@ -61,12 +75,12 @@ function Home() {
         <p className="eyebrow">Browse</p>
         <h2 className="display-lg mt-3">Shop by category</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <Link
               key={category.slug}
               to="/category/$slug"
               params={{ slug: category.slug }}
-              className="group overflow-hidden rounded-3xl bg-card shadow-soft"
+              className={`group overflow-hidden rounded-3xl shadow-soft transition-transform duration-500 hover:-translate-y-1 ${tints[index % tints.length]}`}
             >
               <img
                 src={category.image}
@@ -90,14 +104,14 @@ function Home() {
         <p className="eyebrow">Favourites</p>
         <h2 className="display-lg mt-3">Loved in homes across India</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featured.map((product) => (
+          {featured.map((product, index) => (
             <Link
               key={product.id}
               to="/product/$slug"
               params={{ slug: product.slug }}
               className="group"
             >
-              <div className="overflow-hidden rounded-3xl bg-secondary">
+              <div className={`overflow-hidden rounded-3xl ${tints[index % tints.length]}`}>
                 <img
                   src={product.images[0]}
                   alt={product.name}
@@ -113,19 +127,23 @@ function Home() {
       </section>
 
       <section className="container-page py-16">
-        <div className="rounded-[2rem] bg-blush/40 p-8 md:p-14">
+        <div className="rounded-[2rem] bg-sage/40 p-8 md:p-14">
           <p className="eyebrow">Why NAVEH?</p>
           <h2 className="display-lg mt-3">Four reasons families choose us.</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {whyNaveh.map((item) => (
+            {whyNaveh.map((item, index) => (
               <div key={item.title}>
-                <h3 className="text-lg">{item.title}</h3>
+                <span
+                  className={`inline-block h-9 w-9 rounded-full ${["bg-terracotta/70", "bg-mauve", "bg-wood", "bg-sage-mid"][index % 4]}`}
+                />
+                <h3 className="mt-3 text-lg">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       <section className="container-page py-16">
         <div className="grid gap-10 rounded-[2rem] bg-secondary/60 p-8 md:p-14 lg:grid-cols-2">
@@ -155,8 +173,11 @@ function Home() {
         <p className="eyebrow">Kind words</p>
         <h2 className="display-lg mt-3">From our families</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testimonials.map((item) => (
-            <figure key={item.id} className="rounded-3xl bg-card p-7 shadow-soft">
+          {testimonials.map((item, index) => (
+            <figure
+              key={item.id}
+              className={`rounded-3xl p-7 shadow-soft ${["bg-blush", "bg-sage/45", "bg-wood-light/55"][index % 3]}`}
+            >
               <blockquote className="text-sm leading-relaxed text-muted-foreground">
                 “{item.quote}”
               </blockquote>
@@ -167,6 +188,7 @@ function Home() {
             </figure>
           ))}
         </div>
+
       </section>
     </div>
   );

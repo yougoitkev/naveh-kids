@@ -44,59 +44,71 @@
   --color-wood: var(--wood);
   --color-wood-light: var(--wood-light);
   --color-wood-deep: var(--wood-deep);
+  --color-wood-darkest: var(--wood-darkest);
   --color-cream: var(--cream);
   --color-beige: var(--beige);
+  --color-mauve: var(--mauve);
+  --color-mauve-light: var(--mauve-light);
+  --color-mauve-deep: var(--mauve-deep);
   --color-sage: var(--sage);
+  --color-sage-mid: var(--sage-mid);
   --color-sage-deep: var(--sage-deep);
   --color-dusty: var(--dusty);
   --color-blush: var(--blush);
   --color-terracotta: var(--terracotta);
   --color-ink: var(--ink);
 
+
 }
 
 :root {
   --radius: 1rem;
 
-  /* Palette sampled from the NAVEH Kids logo */
-  --cream: oklch(0.972 0.016 79);
-  --beige: oklch(0.932 0.026 76);
-  --wood: oklch(0.79 0.062 71);
-  --wood-light: oklch(0.885 0.042 78);
-  --wood-deep: oklch(0.44 0.062 55);
-  --sage: oklch(0.83 0.036 138);
-  --sage-deep: oklch(0.545 0.048 138);
-  --terracotta: oklch(0.615 0.113 39);
-  --dusty: oklch(0.79 0.048 240);
-  --blush: oklch(0.878 0.045 20);
-  --ink: oklch(0.3 0.02 55);
-
+  /* NAVEH Kids custom palette — 60 / 20 / 10 / 10
+     60% cream base, 20% warm wood, 10% mauve-taupe, 10% sage */
+  --cream: #f8ecdf;
+  --beige: #f8e9da;
+  --wood: #c59762;
+  --wood-light: #e9bf8f;
+  --wood-deep: #9e7447;
+  --wood-darkest: #493620;
+  --mauve: #a68474;
+  --mauve-light: #c9aa9c;
+  --mauve-deep: #806559;
+  --sage: #b9c391;
+  --sage-mid: #949c74;
+  --sage-deep: #52573f;
+  --terracotta: #c7935b;
+  --dusty: #c2c9cc;
+  --blush: #e3d4ce;
+  --ink: #23180c;
 
   --background: var(--cream);
   --foreground: var(--ink);
-  --card: oklch(0.992 0.008 88);
+  --card: #fdf6ee;
   --card-foreground: var(--ink);
-  --popover: oklch(0.992 0.008 88);
+  --popover: #fdf6ee;
   --popover-foreground: var(--ink);
 
   --primary: var(--wood-deep);
-  --primary-foreground: oklch(0.985 0.01 88);
-  --secondary: var(--beige);
+  --primary-foreground: #f8ecdf;
+  --secondary: #f2e0cd;
   --secondary-foreground: var(--ink);
-  --muted: oklch(0.945 0.018 84);
-  --muted-foreground: oklch(0.505 0.018 62);
-  --accent: var(--sage-deep);
-  --accent-foreground: oklch(0.985 0.01 88);
-  --destructive: oklch(0.55 0.16 27);
-  --destructive-foreground: oklch(0.985 0.01 88);
+  --muted: #f3e6d7;
+  --muted-foreground: #745736;
+  --accent: var(--sage-mid);
+  --accent-foreground: #12140c;
+  --destructive: #a33b2a;
+  --destructive-foreground: #f8ecdf;
 
-  --border: oklch(0.895 0.018 80);
-  --input: oklch(0.895 0.018 80);
+  --border: #e3d4ce;
+  --input: #e3d4ce;
   --ring: var(--wood);
 
-  --shadow-soft: 0 1px 2px oklch(0.28 0.014 60 / 0.04), 0 12px 32px -12px oklch(0.28 0.014 60 / 0.14);
-  --shadow-lift: 0 2px 4px oklch(0.28 0.014 60 / 0.05), 0 28px 60px -24px oklch(0.28 0.014 60 / 0.24);
+  --shadow-soft: 0 1px 2px rgb(73 54 32 / 0.06), 0 12px 32px -12px rgb(73 54 32 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(73 54 32 / 0.07), 0 28px 60px -24px rgb(73 54 32 / 0.28);
 }
+
 
 * {
   border-color: var(--border);
