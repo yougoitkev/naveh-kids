@@ -164,6 +164,13 @@ h4,
   letter-spacing: -0.03em;
 }
 
+@utility bubbly {
+  font-family: var(--font-bubbly);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
 @utility eyebrow {
   font-size: 0.72rem;
   text-transform: uppercase;
