@@ -173,8 +173,11 @@ function Home() {
         <p className="eyebrow">Kind words</p>
         <h2 className="display-lg mt-3">From our families</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {testimonials.map((item) => (
-            <figure key={item.id} className="rounded-3xl bg-card p-7 shadow-soft">
+          {testimonials.map((item, index) => (
+            <figure
+              key={item.id}
+              className={`rounded-3xl p-7 shadow-soft ${["bg-blush", "bg-sage/45", "bg-wood-light/55"][index % 3]}`}
+            >
               <blockquote className="text-sm leading-relaxed text-muted-foreground">
                 “{item.quote}”
               </blockquote>
@@ -185,6 +188,7 @@ function Home() {
             </figure>
           ))}
         </div>
+
       </section>
     </div>
   );
