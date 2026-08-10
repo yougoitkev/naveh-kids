@@ -34,7 +34,7 @@ function Home() {
         <div className="container-page grid items-center gap-10 py-14 md:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="eyebrow">{brand.name}</p>
-            <h1 className="display-xl mt-5">
+            <h1 className="display-xl bubbly mt-5">
               Crafted for every <span className="text-accent">little</span>{" "}
               <span className="text-terracotta">blessing.</span>
             </h1>
@@ -73,7 +73,7 @@ function Home() {
 
       <section className="container-page py-16">
         <p className="eyebrow">Browse</p>
-        <h2 className="display-lg mt-3">Shop by category</h2>
+        <h2 className="display-lg bubbly mt-3">Shop by category</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((category, index) => (
             <Link
@@ -102,7 +102,7 @@ function Home() {
 
       <section className="container-page py-16">
         <p className="eyebrow">Favourites</p>
-        <h2 className="display-lg mt-3">Loved in homes across India</h2>
+        <h2 className="display-lg bubbly mt-3">Loved in homes across India</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((product, index) => (
             <Link
@@ -129,7 +129,7 @@ function Home() {
       <section className="container-page py-16">
         <div className="rounded-[2rem] bg-sage/40 p-8 md:p-14">
           <p className="eyebrow">Why NAVEH?</p>
-          <h2 className="display-lg mt-3">Four reasons families choose us.</h2>
+          <h2 className="display-lg bubbly mt-3">Four reasons families choose us.</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {whyNaveh.map((item, index) => (
               <div key={item.title}>
@@ -171,7 +171,7 @@ function Home() {
 
       <section className="container-page py-16">
         <p className="eyebrow">Kind words</p>
-        <h2 className="display-lg mt-3">From our families</h2>
+        <h2 className="display-lg bubbly mt-3">From our families</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {testimonials.map((item, index) => (
             <figure
