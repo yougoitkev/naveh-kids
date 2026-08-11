@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -101,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -145,6 +146,8 @@ const NAV = [
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isHome = pathname === "/" || pathname === "";
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -153,25 +156,58 @@ function RootComponent() {
           Free delivery across India on orders above ₹7,000
         </div>
         <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-          <div className="container-page flex h-20 items-center justify-between gap-4">
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src={logo}
-                alt="NAVEH Kids — crafted for every little blessing"
-                width={160}
-                height={140}
-                className="h-12 w-auto mix-blend-multiply"
-              />
-              <span className="sr-only">NAVEH Kids</span>
-            </Link>
-            <nav className="hidden items-center gap-7 text-sm md:flex">
-              {NAV.map((item) => (
-                <Link key={item.to} to={item.to} className="link-underline">
-                  {item.label}
+          <div
+            className={`container-page flex items-center gap-4 ${
+              isHome ? "flex-col py-5 md:h-24 md:flex-row md:py-0" : "h-20"
+            }`}
+          >
+            {isHome ? (
+              <>
+                <nav className="hidden flex-1 items-center gap-7 text-sm md:flex">
+                  {NAV.map((item) => (
+                    <Link key={item.to} to={item.to} className="link-underline">
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <Link to="/" className="flex shrink-0 items-center justify-center">
+                  <img
+                    src={logo}
+                    alt="NAVEH Kids — crafted for every little blessing"
+                    width={160}
+                    height={140}
+                    className="h-16 w-auto mix-blend-multiply"
+                  />
+                  <span className="sr-only">NAVEH Kids</span>
                 </Link>
-              ))}
-            </nav>
-            <CartLink />
+                <div className="flex flex-1 justify-end">
+                  <CartLink />
+                </div>
+              </>
+            ) : (
+              <>
+                <Link to="/" className="flex items-center gap-3">
+                  <img
+                    src={logo}
+                    alt="NAVEH Kids — crafted for every little blessing"
+                    width={160}
+                    height={140}
+                    className="h-12 w-auto mix-blend-multiply"
+                  />
+                  <span className="sr-only">NAVEH Kids</span>
+                </Link>
+                <nav className="ml-auto hidden items-center gap-7 text-sm md:flex">
+                  {NAV.map((item) => (
+                    <Link key={item.to} to={item.to} className="link-underline">
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <div className={isHome ? "" : "ml-auto md:ml-0"}>
+                  <CartLink />
+                </div>
+              </>
+            )}
           </div>
           <nav className="flex items-center justify-center gap-6 border-t border-border py-2 text-xs md:hidden">
             {NAV.map((item) => (
