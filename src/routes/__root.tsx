@@ -193,13 +193,14 @@ function RootComponent() {
                 <Link to="/" className="flex items-center gap-3">
                   <img
                     src={logo}
-                    alt="NAVEH Kids — crafted for every little blessing"
-                    width={160}
-                    height={140}
-                    className="h-12 w-auto"
+                    alt="NAVEH Kids"
+                    width={640}
+                    height={200}
+                    className="h-10 w-auto md:h-11"
                   />
                   <span className="sr-only">NAVEH Kids</span>
                 </Link>
+
                 <nav className="ml-auto hidden items-center gap-7 text-sm md:flex">
                   {NAV.map((item) => (
                     <Link key={item.to} to={item.to} className="link-underline">
