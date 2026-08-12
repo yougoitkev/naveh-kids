@@ -232,11 +232,12 @@ function RootComponent() {
               <img
                 src={logo}
                 alt="NAVEH Kids"
-                width={160}
-                height={140}
+                width={640}
+                height={200}
                 loading="lazy"
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
+
               <p className="mt-4 text-muted-foreground">{brand.tagline}.</p>
             </div>
             <div>
