@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/logo.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -170,16 +170,20 @@ function RootComponent() {
                     </Link>
                   ))}
                 </nav>
-                <Link to="/" className="flex shrink-0 items-center justify-center">
+                <Link to="/" className="flex shrink-0 flex-col items-center justify-center">
                   <img
                     src={logo}
-                    alt="NAVEH Kids — crafted for every little blessing"
-                    width={160}
-                    height={140}
-                    className="h-16 w-auto"
+                    alt="NAVEH Kids"
+                    width={640}
+                    height={200}
+                    className="h-14 w-auto md:h-16"
                   />
+                  <span className="mt-1 text-[0.62rem] tracking-[0.24em] text-muted-foreground uppercase">
+                    Crafted for every little blessing
+                  </span>
                   <span className="sr-only">NAVEH Kids</span>
                 </Link>
+
                 <div className="flex flex-1 justify-end">
                   <CartLink />
                 </div>
@@ -189,13 +193,14 @@ function RootComponent() {
                 <Link to="/" className="flex items-center gap-3">
                   <img
                     src={logo}
-                    alt="NAVEH Kids — crafted for every little blessing"
-                    width={160}
-                    height={140}
-                    className="h-12 w-auto"
+                    alt="NAVEH Kids"
+                    width={640}
+                    height={200}
+                    className="h-10 w-auto md:h-11"
                   />
                   <span className="sr-only">NAVEH Kids</span>
                 </Link>
+
                 <nav className="ml-auto hidden items-center gap-7 text-sm md:flex">
                   {NAV.map((item) => (
                     <Link key={item.to} to={item.to} className="link-underline">
@@ -227,11 +232,12 @@ function RootComponent() {
               <img
                 src={logo}
                 alt="NAVEH Kids"
-                width={160}
-                height={140}
+                width={640}
+                height={200}
                 loading="lazy"
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
+
               <p className="mt-4 text-muted-foreground">{brand.tagline}.</p>
             </div>
             <div>
