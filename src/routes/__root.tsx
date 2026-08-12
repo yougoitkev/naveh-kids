@@ -176,7 +176,7 @@ function RootComponent() {
                     alt="NAVEH Kids — crafted for every little blessing"
                     width={160}
                     height={140}
-                    className="h-16 w-auto mix-blend-multiply"
+                    className="h-16 w-auto"
                   />
                   <span className="sr-only">NAVEH Kids</span>
                 </Link>
@@ -192,7 +192,7 @@ function RootComponent() {
                     alt="NAVEH Kids — crafted for every little blessing"
                     width={160}
                     height={140}
-                    className="h-12 w-auto mix-blend-multiply"
+                    className="h-12 w-auto"
                   />
                   <span className="sr-only">NAVEH Kids</span>
                 </Link>
@@ -230,7 +230,7 @@ function RootComponent() {
                 width={160}
                 height={140}
                 loading="lazy"
-                className="h-16 w-auto mix-blend-multiply"
+                className="h-16 w-auto"
               />
               <p className="mt-4 text-muted-foreground">{brand.tagline}.</p>
             </div>
