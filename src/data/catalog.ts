@@ -5,7 +5,7 @@ import storyWorkshop from "@/assets/story-workshop.jpg";
 import assemblyKit from "@/assets/assembly-kit.jpg";
 import productKitchenTower from "@/assets/product-kitchen-tower.jpg";
 
-const logo = "/logo.svg";
+const logo = "/logo-mark.png";
 import scooterBlue from "@/assets/scooter-blue.jpg";
 import scooterSide from "@/assets/scooter-side.jpg";
 import scooterWheel from "@/assets/scooter-wheel.jpg";
