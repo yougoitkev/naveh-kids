@@ -170,16 +170,20 @@ function RootComponent() {
                     </Link>
                   ))}
                 </nav>
-                <Link to="/" className="flex shrink-0 items-center justify-center">
+                <Link to="/" className="flex shrink-0 flex-col items-center justify-center">
                   <img
                     src={logo}
-                    alt="NAVEH Kids — crafted for every little blessing"
-                    width={160}
-                    height={140}
-                    className="h-16 w-auto"
+                    alt="NAVEH Kids"
+                    width={640}
+                    height={200}
+                    className="h-14 w-auto md:h-16"
                   />
+                  <span className="mt-1 text-[0.62rem] tracking-[0.24em] text-muted-foreground uppercase">
+                    Crafted for every little blessing
+                  </span>
                   <span className="sr-only">NAVEH Kids</span>
                 </Link>
+
                 <div className="flex flex-1 justify-end">
                   <CartLink />
                 </div>
